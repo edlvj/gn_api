@@ -4,7 +4,7 @@ import (
 	"github.com/revel/revel"
 	"github.com/edlvj/gn-api/app/database"
 	"github.com/edlvj/gn-api/app/models"
-    "github.com/edlvj/gn-api/app/forms"
+	"github.com/edlvj/gn-api/app/forms"
 	"gopkg.in/mgo.v2/bson"
 )
 
