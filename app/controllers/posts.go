@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"net/http"
-
 	"github.com/revel/revel"
 	"github.com/edlvj/gn-api/app/database"
 	"github.com/edlvj/gn-api/app/models"
@@ -32,13 +31,13 @@ func (c Posts) Create(title, text, post_type, image_url string) revel.Result {
 
 	post.Validate(c.Validation)
 
-    if c.Validation.HasErrors() {
-        c.Validation.Keep()
-        return c.RenderJSON(c.Validation);
-    }
+	if c.Validation.HasErrors() {
+		c.Validation.Keep()
+		return c.RenderJSON(c.Validation);
+	}
 
-    if err := database.Posts.Insert(post); err != nil {
-	 	return c.RenderJSON(err);
+	if err := database.Posts.Insert(post); err != nil {
+		return c.RenderJSON(err);
 	}
 
 	c.Response.Status = http.StatusCreated
